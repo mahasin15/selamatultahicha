@@ -1,0 +1,1459 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0c0a0e;
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+img,
+button {
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   PAGE SYSTEM
+===================================== */
+
+.page {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        visibility .8s ease;
+}
+
+.page.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =====================================
+   BACKGROUND
+===================================== */
+
+.page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(213, 100, 151, .09);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   PAGE 1
+===================================== */
+
+#page1 {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #38202f 0%,
+            #171018 45%,
+            #09070a 100%
+        );
+}
+
+.opening {
+
+    position: relative;
+
+    width: min(100%, 700px);
+    text-align: center;
+
+    z-index: 2;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.tiny-text {
+
+    color: #dba5c0;
+
+    letter-spacing: 5px;
+
+    font-size: 10px;
+
+    margin-bottom: 25px;
+}
+
+.opening h1 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(72px, 15vw, 170px);
+
+    font-weight: 500;
+
+    line-height: .65;
+    white-space: normal;
+}
+
+.opening h1 span {
+
+    display: block;
+
+    color: #ed8fba;
+
+    margin-left: clamp(0px, 5vw, 70px);
+}
+
+.line {
+
+    width: 70px;
+    height: 1px;
+
+    background: #c8759d;
+
+    margin: 45px auto 25px;
+}
+
+.opening p {
+
+    color: #cbbbc5;
+
+    line-height: 1.9;
+
+    font-size: 13px;
+}
+
+.primary-btn {
+
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    color: white;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(15px);
+
+    transition: .35s;
+}
+
+.primary-btn span {
+
+    margin-left: 12px;
+
+    color: #f39bc0;
+}
+
+.primary-btn:hover {
+
+    transform: translateY(-5px);
+
+    background: #d76d9c;
+
+    box-shadow:
+        0 15px 40px rgba(215,109,156,.25);
+}
+
+
+/* =====================================
+   FLOATING HEART
+===================================== */
+
+.decor-heart {
+
+    position: absolute;
+
+    color: rgba(239,139,183,.35);
+
+    font-size: 35px;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.h1 {
+    left: 15%;
+    top: 25%;
+}
+
+.h2 {
+    right: 17%;
+    top: 32%;
+
+    animation-delay: 1.5s;
+}
+
+.h3 {
+    left: 23%;
+    bottom: 18%;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =====================================
+   COMMON
+===================================== */
+
+.label {
+
+    color: #ce8cae;
+
+    letter-spacing: 4px;
+
+    font-size: 9px;
+
+    margin-bottom: 15px;
+}
+
+.next-btn {
+
+    margin-top: 25px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #e796ba;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+.next-btn:hover {
+
+    color: white;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   PAGE 2
+===================================== */
+
+#page2 {
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #47263e,
+            #180e17 55%,
+            #09070a
+        );
+}
+
+.birthday {
+
+    width: min(100%, 700px);
+
+    text-align: center;
+
+    padding: 50px 0;
+}
+
+.birthday h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(60px, 9vw, 95px);
+
+    font-weight: 500;
+
+    line-height: .85;
+}
+
+.birthday h2 span {
+
+    color: #ed91ba;
+}
+
+
+/* =====================================
+   CAKE
+===================================== */
+
+.cake {
+
+    position: relative;
+
+    width: 230px;
+
+    height: 190px;
+
+    margin: 30px auto 20px;
+}
+
+.plate {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 5px;
+
+    width: 220px;
+    height: 18px;
+
+    background: #ead6df;
+
+    border-radius: 50%;
+}
+
+.cake-body {
+
+    position: absolute;
+
+    left: 35px;
+
+    bottom: 30px;
+
+    width: 160px;
+
+    height: 75px;
+
+    background:
+        linear-gradient(
+            #e98db5,
+            #c96291
+        );
+
+    border-radius:
+        12px 12px 25px 25px;
+}
+
+.cake-top {
+
+    position: absolute;
+
+    left: 40px;
+
+    bottom: 91px;
+
+    width: 150px;
+
+    height: 30px;
+
+    background: #ffe8f1;
+
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+.cream {
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background: #fff1f6;
+
+    border-radius: 50%;
+
+    top: 25px;
+}
+
+.c1 {
+    left: 25px;
+}
+
+.c2 {
+    left: 70px;
+}
+
+.c3 {
+    right: 25px;
+}
+
+.candle {
+
+    position: absolute;
+
+    left: 108px;
+
+    bottom: 110px;
+
+    width: 14px;
+    height: 45px;
+
+    background: #fff0f6;
+
+    border-radius: 4px;
+
+    z-index: 5;
+}
+
+.flame {
+
+    position: absolute;
+
+    left: 106px;
+
+    bottom: 150px;
+
+    width: 19px;
+    height: 28px;
+
+    background: #ffad48;
+
+    border-radius: 50% 50% 50% 10%;
+
+    transform: rotate(45deg);
+
+    box-shadow: 0 0 25px #ffae4c;
+
+    animation: flame .7s alternate infinite;
+}
+
+
+/* =====================================
+   BIRTHDAY TEXT
+===================================== */
+
+.birthday-text {
+
+    max-width: 610px;
+
+    margin: auto;
+
+    color: #cdbdc7;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    text-align: left;
+}
+
+.birthday-text p {
+
+    margin-bottom: 15px;
+}
+
+.birthday-text > p:first-child {
+
+    text-align: center;
+
+    color: #f0cbdc;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+}
+
+.closing-birthday {
+
+    text-align: center !important;
+
+    margin-top: 25px;
+}
+
+.closing-birthday strong {
+
+    color: #ee9cc0;
+}
+
+
+/* =====================================
+   PAGE 3
+===================================== */
+
+#page3 {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #312329,
+            #100b10 65%,
+            #070609
+        );
+}
+
+.memories {
+
+    width: min(100%, 850px);
+
+    text-align: center;
+
+    padding: 30px 0;
+}
+
+.memories h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(60px, 9vw, 90px);
+
+    line-height: .8;
+
+    font-weight: 500;
+}
+
+.memories h2 span {
+
+    color: #e990b8;
+}
+
+.memory-description {
+
+    max-width: 500px;
+
+    margin: 15px auto 25px;
+
+    color: #bdaeb7;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CUTE MEMORY CAMERA
+========================================= */
+
+.cute-camera {
+    position: relative;
+    width: min(90vw, 470px);
+    margin: 45px auto;
+    padding: 22px 22px 28px;
+
+    background: linear-gradient(
+        145deg,
+        #ffd9e8,
+        #ffc4dc
+    );
+
+    border-radius: 38px 38px 48px 48px;
+
+    box-shadow:
+        0 25px 50px rgba(255, 91, 150, 0.22),
+        inset 0 2px 0 rgba(255,255,255,.8);
+
+    border: 3px solid #fff;
+
+    transform: rotate(-1deg);
+
+    transition: .3s ease;
+}
+
+.cute-camera:hover {
+    transform: rotate(0deg) translateY(-5px);
+}
+
+
+/* =========================================
+   DEKORASI
+========================================= */
+
+.camera-star {
+    position: absolute;
+    z-index: 10;
+
+    font-size: 25px;
+    color: #fff;
+
+    text-shadow:
+        0 2px 5px rgba(255, 92, 151, .35);
+
+    animation: cuteFloat 3s ease-in-out infinite;
+}
+
+.star-1 {
+    top: -17px;
+    left: 35px;
+    transform: rotate(-15deg);
+}
+
+.star-2 {
+    top: 35px;
+    right: -17px;
+    font-size: 30px;
+    animation-delay: .5s;
+}
+
+.star-3 {
+    bottom: 110px;
+    left: -18px;
+    animation-delay: 1s;
+}
+
+.star-4 {
+    bottom: 35px;
+    right: 12px;
+    font-size: 22px;
+    animation-delay: 1.5s;
+}
+
+@keyframes cuteFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(8deg);
+    }
+}
+
+
+/* =========================================
+   CAMERA TOP
+========================================= */
+
+.camera-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2px 7px 15px;
+}
+
+.camera-brand {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #8e3d61;
+
+    background: rgba(255,255,255,.55);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+}
+
+.camera-mode {
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #a4486e;
+}
+
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.camera-screen {
+    position: relative;
+
+    padding: 12px;
+
+    background: #fff;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 18px rgba(120, 50, 80, .12);
+}
+
+
+/* =========================================
+   PHOTO FRAME
+========================================= */
+
+.photo-frame {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #222;
+
+    box-shadow:
+        inset 0 0 0 4px rgba(255,255,255,.12);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+
+/* =========================================
+   PHOTO INFO
+========================================= */
+
+.photo-info {
+    position: absolute;
+
+    top: 12px;
+    left: 14px;
+    right: 14px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    color: white;
+
+    text-shadow:
+        0 1px 4px rgba(0,0,0,.8);
+
+    z-index: 4;
+}
+
+.photo-info span:first-child {
+    color: #ffb6cb;
+}
+
+
+/* =========================================
+   FLASH
+========================================= */
+
+.photo-flash {
+    position: absolute;
+
+    inset: 0;
+
+    background: white;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+.photo-flash.active {
+    animation: cameraFlashEffect .35s ease;
+}
+
+@keyframes cameraFlashEffect {
+
+    0% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: .95;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   CAMERA BOTTOM
+========================================= */
+
+.camera-bottom {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 28px;
+
+    padding-top: 18px;
+}
+
+
+/* =========================================
+   ARROW BUTTON
+========================================= */
+
+.camera-arrow {
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #d75886;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(160, 60, 100, .15);
+
+    transition: .2s ease;
+}
+
+.camera-arrow:hover {
+
+    transform: scale(1.12);
+
+    background: #fff3f7;
+}
+
+.camera-arrow:active {
+
+    transform: scale(.9);
+}
+
+
+/* =========================================
+   SHUTTER
+========================================= */
+
+.cute-shutter {
+
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    border: 6px solid white;
+
+    background: #ff7da8;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(170, 50, 100, .22);
+
+    transition: .2s ease;
+}
+
+.cute-shutter span {
+
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #ffb5cd;
+
+    border: 3px solid #fff;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.cute-shutter:hover {
+
+    transform: scale(1.08) rotate(5deg);
+}
+
+.cute-shutter:active {
+
+    transform: scale(.9);
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.camera-caption {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    color: #8e3d61;
+}
+
+.camera-caption p {
+
+    margin: 0;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 22px;
+
+    text-align: center;
+}
+
+.camera-caption span {
+
+    font-size: 15px;
+
+    color: #e96896;
+}
+
+.memory-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.memory-btn {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: .25s ease;
+    cursor: pointer;
+}
+
+.memory-btn.restart {
+    background: linear-gradient(135deg, #ffb7d0, #ff7aa6);
+    color: #3a1220;
+    box-shadow: 0 10px 24px rgba(255, 122, 166, 0.35);
+    border-color: rgba(58, 18, 32, 0.18);
+    white-space: nowrap;
+}
+
+.memory-btn.restart:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 28px rgba(255, 122, 166, 0.45);
+}
+
+
+/* =====================================
+   ENVELOPE
+===================================== */
+
+.envelope {
+
+    position: relative;
+
+    width: 360px;
+
+    height: 230px;
+
+    max-width: 90vw;
+
+    margin: 40px auto 10px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #bc608b;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5);
+}
+
+.letter-paper {
+
+    position: absolute;
+
+    left: 30px;
+
+    bottom: 15px;
+
+    width: calc(100% - 60px);
+
+    height: 200px;
+
+    background: #fff8f4;
+
+    color: #46383d;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    transition: 1s;
+}
+
+.letter-inside {
+
+    padding: 22px;
+
+    text-align: left;
+
+    font-size: 8px;
+
+    line-height: 1.45;
+}
+
+.letter-inside h3 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+.letter-inside p {
+
+    margin-bottom: 7px;
+}
+
+.signature {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 16px;
+
+    text-align: right;
+
+    color: #b85784;
+}
+
+
+/* ENVELOPE FRONT */
+
+.envelope-front {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 130px;
+
+    background: #d16c99;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 4;
+
+    border-radius: 0 0 8px 8px;
+}
+
+
+/* FLAP */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 140px;
+
+    background: #e083ad;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 72%
+        );
+
+    transform-origin: top;
+
+    transition: 1s;
+
+    z-index: 5;
+}
+
+.envelope.open .envelope-flap {
+
+    transform: rotateX(180deg);
+
+    z-index: 1;
+}
+
+.envelope.open .letter-paper {
+
+    transform: translateY(-100px);
+
+    height: 290px;
+
+    z-index: 3;
+}
+
+
+/* =====================================
+   FINAL MESSAGE
+===================================== */
+
+.open-hint {
+
+    color: #9f8994;
+
+    font-size: 10px;
+
+    transition: .5s;
+}
+
+.final-message {
+
+    margin-top: 15px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition: 1s;
+}
+
+.final-message.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.heart-big {
+
+    font-size: 48px;
+
+    color: #ee83b0;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+.final-message h3 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 34px;
+
+    color: #f0c1d7;
+}
+
+.final-message p {
+
+    color: #bbaab5;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.final-stars {
+
+    margin-top: 10px;
+
+    color: #e996bb;
+}
+
+.final-message button {
+
+    margin-top: 15px;
+
+    padding: 9px 18px;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    color: white;
+
+    border-radius: 30px;
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-30px)
+            rotate(12deg);
+    }
+}
+
+@keyframes flame {
+
+    from {
+
+        transform:
+            rotate(40deg)
+            scale(1);
+    }
+
+    to {
+
+        transform:
+            rotate(50deg)
+            scale(1.15);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform: scale(1);
+    }
+
+    50% {
+
+        transform: scale(1.25);
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 18px 10px;
+    }
+
+    .opening h1 {
+        font-size: clamp(54px, 17vw, 92px);
+    }
+
+    .opening h1 span {
+        margin-left: 0;
+    }
+
+    .birthday {
+        padding: 22px 4px;
+    }
+
+    .birthday h2 {
+        font-size: clamp(44px, 14vw, 62px);
+    }
+
+    .birthday-text {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .memories h2 {
+        font-size: clamp(48px, 15vw, 72px);
+    }
+
+    .cute-camera {
+        width: min(100%, 340px);
+        max-width: 340px;
+        padding: 16px 14px 18px;
+        margin: 22px auto 10px;
+    }
+
+    .camera-top {
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 12px;
+    }
+
+    .camera-brand {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+        padding: 6px 10px;
+    }
+
+    .camera-mode {
+        font-size: 10px;
+    }
+
+    .camera-bottom {
+        gap: 14px;
+    }
+
+    .camera-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 26px;
+    }
+
+    .cute-shutter {
+        width: 58px;
+        height: 58px;
+    }
+
+    .camera-caption {
+        gap: 8px;
+    }
+
+    .camera-caption p {
+        font-size: 20px;
+    }
+
+    .memory-btn.restart {
+        width: auto;
+        max-width: 220px;
+        padding: 11px 16px;
+    }
+
+    .envelope {
+        transform: scale(.8);
+        transform-origin: center top;
+        margin-top: 10px;
+    }
+
+    .letter-inside {
+        font-size: 9px;
+        padding: 16px;
+    }
+
+    .letter-inside h3 {
+        font-size: 22px;
+    }
+}
+
+
+@media (max-width: 390px) {
+
+    .opening h1 {
+        font-size: 58px;
+    }
+
+    .birthday h2 {
+        font-size: 50px;
+    }
+
+    .cute-camera {
+        max-width: 300px;
+    }
+
+    .camera-caption p {
+        font-size: 18px;
+    }
+
+    .memory-btn.restart {
+        max-width: 200px;
+        font-size: 11px;
+    }
+
+    .envelope {
+        transform: scale(.72);
+    }
+}
